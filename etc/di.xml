@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Avendor\Contact\Api\Data\ContactInterface"
+        type="Avendor\Contact\Model\Contact" />
+    <preference for="Avendor\Contact\Api\ContactRepositoryInterface"
+        type="Avendor\Contact\Model\ContactRepository" />
+    <type name="Magento\Framework\Model\Entity\RepositoryFactory">
+        <arguments>
+            <argument name="entities" xsi:type="array">
+                <item name="Avendor\Contact\Api\Data\ContactInterface" xsi:type="string">Avendor\Contact\Api\ContactRepositoryInterface</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
